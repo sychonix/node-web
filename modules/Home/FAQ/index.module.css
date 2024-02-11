@@ -1,0 +1,36 @@
+.wrapper {
+    padding-top: calc(var(--mantine-spacing-xl) * 2);
+    padding-bottom: calc(var(--mantine-spacing-xl) * 2);
+    min-height: rem(650px);
+}
+
+.title {
+    font-size: rem(34px);
+    font-weight: 900;
+
+    @media (max-width: $mantine-breakpoint-sm) {
+        font-size: rem(24px);
+    }
+}
+
+.description {
+    max-width: rem(600px);
+    margin: auto;
+
+    &::after {
+        content: '';
+        display: block;
+        background-color: var(--mantine-color-pink-filled);
+        width: rem(45px);
+        height: rem(2px);
+        margin-top: var(--mantine-spacing-sm);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.item {
+    border-radius: var(--mantine-radius-md);
+    margin-bottom: var(--mantine-spacing-lg);
+    border: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+}
