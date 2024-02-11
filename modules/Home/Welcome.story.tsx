@@ -1,7 +1,7 @@
-import { Welcome } from '.';
+import { Home } from '.';
 
 export default {
   title: 'Welcome',
 };
 
-export const Usage = () => <Welcome />;
+export const Usage = () => <Home />;
