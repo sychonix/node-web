@@ -2,7 +2,6 @@
 
 import {
   Group,
-  Button,
   Divider,
   Box,
   Burger,
@@ -10,19 +9,51 @@ import {
   rem,
   Container,
   Drawer,
+  Button,
   //   useMantineColorScheme,
 } from '@mantine/core';
 import Image from 'next/image';
 import { useDisclosure } from '@mantine/hooks';
 // import { SwitchMode } from '../SwitchMode';
+import { usePathname } from 'next/navigation';
 import classes from './index.module.css';
+import useSticky from '@/hooks/useSticky';
+
+const navigation = [
+  {
+    title: 'Networks',
+    href: '/#network',
+  },
+  {
+    title: 'About',
+    href: '/#about',
+  },
+  {
+    title: 'FAQ',
+    href: '/#faq',
+  },
+  {
+    title: 'Contact Us',
+    href: '/#contact',
+  },
+];
 
 export function HeaderSection() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
   //   const { setColorScheme } = useMantineColorScheme();
+  const pathname = usePathname();
+  const isSticky = useSticky('myBody');
   return (
-    <Box style={{ position: 'relative' }}>
-      <header className={classes.header}>
+    <div style={{ position: 'relative' }}>
+      <header
+        className={classes.header}
+        id="myHeader"
+        style={{
+          position: isSticky ? 'fixed' : 'absolute',
+          backgroundColor: isSticky ? '#1D1E30' : 'transparent',
+          boxShadow: isSticky ? '0 0 12px 0 rgba(0,0,0,0.2)' : 'none',
+        }}
+      >
         <Container size="lg" style={{ height: '100%' }}>
           <div
             style={{
@@ -36,22 +67,24 @@ export function HeaderSection() {
             <Image src="/ravennode-logo.svg" width={150} height={150} alt="Picture of the author" />
 
             <Group h="100%" gap={0} visibleFrom="sm" style={{ color: 'white' }}>
-              <a href="#network" className={classes.link}>
-                Networks
-              </a>
-              <a href="#about" className={classes.link}>
-                About
-              </a>
-              {/* <a href="#" className={classes.link}>
-                Community
-              </a> */}
-              <a href="#faq" className={classes.link}>
-                FAQ
-              </a>
-              <Button style={{ marginLeft: '12px' }} variant="outline">
+              {navigation.map((item, index) => {
+                return (
+                  <a
+                    key={index}
+                    href={item.href}
+                    className={classes.link}
+                    style={{
+                      color: pathname === item.href ? '#C50E82' : 'white',
+                    }}
+                  >
+                    {item.title}
+                  </a>
+                );
+              })}
+              {/* <Button style={{ marginLeft: '12px' }} variant="outline">
                 {' '}
                 Contact Us
-              </Button>
+              </Button> */}
             </Group>
             {/* <Group visibleFrom="sm">
               <Button> Contact Us</Button>
@@ -95,6 +128,6 @@ export function HeaderSection() {
           </Group> */}
         </ScrollArea>
       </Drawer>
-    </Box>
+    </div>
   );
 }

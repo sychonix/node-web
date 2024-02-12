@@ -19,9 +19,9 @@ export function FAQ() {
           <Accordion.Item className={classes.item} value="reset-password">
             <Accordion.Control>What about reliability ?</Accordion.Control>
             <Accordion.Panel>
-              We run nodes on dedicated servers in Europe, USA and Canada. Our team uses monitoring
-              tools 24/7 with Prometheus metrics, Grafana dashboard and telegram bots alerting
-              system
+              We run nodes on dedicated servers in Europe, USA and Singapore. Our team uses
+              monitoring tools 24/7 with Prometheus metrics, Grafana dashboard and telegram bots
+              alerting system
             </Accordion.Panel>
           </Accordion.Item>
 

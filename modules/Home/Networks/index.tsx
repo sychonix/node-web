@@ -1,80 +1,35 @@
 'use client';
 
-import { Title, Text, Card, SimpleGrid, Container, Button, Space, Badge } from '@mantine/core';
-import { IconGauge, IconUser, IconHeartRateMonitor } from '@tabler/icons-react';
+import { Title, Text, Card, SimpleGrid, Container, Space, Badge } from '@mantine/core';
 import Image from 'next/image';
 import classes from './index.module.css';
 
 const mockdata = [
   {
-    title: 'Celestia',
-    code: 'TIA',
-    description:
-      'This dust is actually a powerful poison that will even make a pro wrestler sick, ',
-    icon: IconGauge,
+    title: 'Tangle',
+    // code: 'TIA',
+    icon: '/networks/tangle.png',
     status: 'Active',
     type: 'Testnet',
   },
   {
-    title: 'Celestia',
-    code: 'TIA',
-    description:
-      'This dust is actually a powerful poison that will even make a pro wrestler sick, ',
-    icon: IconUser,
+    title: 'Juneo',
+    // code: 'TIA',
+    icon: '/networks/juneo.jpg',
     status: 'Active',
     type: 'Testnet',
   },
   {
-    title: 'Celestia',
-    code: 'TIA',
-    description:
-      'This dust is actually a powerful poison that will even make a pro wrestler sick, ',
-    icon: IconHeartRateMonitor,
-    status: 'Active',
+    title: 'Arkeo',
+    // code: 'TIA',
+    icon: '/networks/arkeo.jpg',
+    status: 'Archived',
     type: 'Testnet',
   },
   {
-    title: 'Celestia',
-    code: 'TIA',
-    description:
-      'This dust is actually a powerful poison that will even make a pro wrestler sick, ',
-    icon: IconHeartRateMonitor,
-    status: 'Archived',
-    type: 'Mainnet',
-  },
-  {
-    title: 'Celestia',
-    code: 'TIA',
-    description:
-      'This dust is actually a powerful poison that will even make a pro wrestler sick, ',
-    icon: IconGauge,
-    status: 'Archived',
-    type: 'Mainnet',
-  },
-  {
-    title: 'Celestia',
-    code: 'TIA',
-    description:
-      'This dust is actually a powerful poison that will even make a pro wrestler sick, ',
-    icon: IconUser,
-    status: 'Archived',
-    type: 'Mainnet',
-  },
-  {
-    title: 'Celestia',
-    code: 'TIA',
-    description:
-      'This dust is actually a powerful poison that will even make a pro wrestler sick, ',
-    icon: IconHeartRateMonitor,
-    status: 'Archived',
-    type: 'Mainnet',
-  },
-  {
-    title: 'Celestia',
-    code: 'TIA',
-    description:
-      'This dust is actually a powerful poison that will even make a pro wrestler sick, ',
-    icon: IconHeartRateMonitor,
+    title: 'Over Protocol',
+    // code: 'TIA',
+    icon: '/networks/over-protocol.png',
     status: 'Archived',
     type: 'Testnet',
   },
@@ -84,22 +39,19 @@ export function Networks() {
   const features = mockdata.map((feature, index) => (
     <Card key={index} shadow="md" radius="md" className={classes.card} padding="md">
       <div style={{ display: 'flex' }}>
-        <Image
-          src="https://raw.githubusercontent.com/StakeLab-Zone/chains-logo/main/celestia.svg"
-          alt="hero"
-          width="54"
-          height="54"
-        />
+        <Image src={feature.icon} alt="hero" width="54" height="54" />
         <div style={{ paddingLeft: '12px' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <Text fz="md" fw={500}>
               {feature.title}
             </Text>
-            <Text fz="sm" c="dimmed" style={{ paddingLeft: '6px' }}>
-              {feature.code}
-            </Text>
+            {/* {feature.code && (
+              <Text fz="sm" c="dimmed" style={{ paddingLeft: '6px' }}>
+                {feature.code}
+              </Text>
+            )} */}
           </div>
-          <div style={{ display: 'flex' }}>
+          <div style={{ display: 'flex', marginTop: '6px' }}>
             <Badge variant="light" size="sm">
               {feature.type}
             </Badge>
@@ -110,10 +62,10 @@ export function Networks() {
           </div>
         </div>
       </div>
-      <Text fz="sm" mt="sm">
+      {/* <Text fz="sm" mt="sm">
         {feature.description}
-      </Text>
-      <div style={{ display: 'flex' }}>
+      </Text> */}
+      {/* <div style={{ display: 'flex' }}>
         <Button variant="filled" radius="md" mt="md">
           Monit
         </Button>
@@ -121,14 +73,14 @@ export function Networks() {
         <Button variant="outline" radius="md" mt="md">
           Stake
         </Button>
-      </div>
+      </div> */}
     </Card>
   ));
 
   return (
     <>
-      <div id="network">
-        <Container size="lg" py="xl">
+      <div id="network" style={{ minHeight: '800px' }}>
+        <Container size="lg" style={{ paddingTop: '100px' }}>
           <Title order={2} className={classes.title} ta="center" mt="sm">
             Our Networks
           </Title>

@@ -1,23 +1,13 @@
 'use client';
 
-import {
-  Title,
-  SimpleGrid,
-  Text,
-  Button,
-  ThemeIcon,
-  Grid,
-  rem,
-  Container,
-  Space,
-} from '@mantine/core';
+import { Title, SimpleGrid, Text, em, ThemeIcon, Grid, rem, Container, Space } from '@mantine/core';
 import {
   IconGauge,
   IconServer2,
   IconHeartRateMonitor,
   IconBusinessplan,
 } from '@tabler/icons-react';
-import Image from 'next/image';
+import { useMediaQuery } from '@mantine/hooks';
 import { BlockchainAnimation } from '@/components/BlockchainAnimation';
 import classes from './index.module.css';
 
@@ -48,6 +38,7 @@ const features = [
 ];
 
 export function AboutUs() {
+  const isMobile = useMediaQuery(`(max-width: ${em(750)})`);
   const items = features.map((feature) => (
     <div key={feature.title}>
       <ThemeIcon
@@ -68,16 +59,36 @@ export function AboutUs() {
   ));
 
   return (
-    <div className={classes.wrapper} id="about" style={{ backgroundColor: '#040D12' }}>
-      <Container size="lg" mt={20}>
+    <div
+      className={classes.wrapper}
+      id="about"
+      style={{ backgroundColor: '#040D12', minHeight: '800px' }}
+    >
+      <Container size="lg" style={{ paddingTop: '80px' }}>
         <Grid gutter={120}>
-          <Grid.Col span={{ base: 12, md: 5 }} style={{ paddingLeft: '0px', paddingRight: '0px' }}>
-            <div style={{ height: '500px', width: '500px' }}>
-              <BlockchainAnimation />
-            </div>
-            {/* <Image src="/node-block.png" width={500} height={500} alt="Picture of the author" /> */}
-            {/* <Image src="/buildingblock.svg" width={500} height={500} alt="Picture of the author" /> */}
-          </Grid.Col>
+          {isMobile ? null : (
+            <Grid.Col
+              span={{ base: 12, md: 5 }}
+              style={{
+                paddingLeft: '0px',
+                paddingRight: '0px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <div
+                style={{
+                  height: '500px',
+                  width: '500px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                }}
+              >
+                <BlockchainAnimation />
+              </div>
+            </Grid.Col>
+          )}
           <Grid.Col span={{ base: 12, md: 7 }}>
             <Title fz="md" mb="sm" c="pink">
               About Us

@@ -1,10 +1,13 @@
+'use client';
+
 import { Container, Title, Text, Button } from '@mantine/core';
+import { useRouter } from 'next/navigation';
 import classes from './HeroImageRight.module.css';
-import { FeatureSection } from '../Features';
 
 export function HeroImageRight() {
+  const router = useRouter();
   return (
-    <div className={classes.root}>
+    <div className={classes.root} style={{ minHeight: '100vh' }}>
       <Container size="lg" py={100}>
         <div className={classes.inner}>
           <div className={classes.content}>
@@ -28,13 +31,14 @@ export function HeroImageRight() {
             </Text>
             {/* <FeatureSection /> */}
             <Button
+              onClick={() => router.push('/#about')}
               //   variant="gradient"
               //   gradient={{ from: 'pink', to: 'yellow' }}
               size="xl"
               className={classes.control}
               mt={40}
             >
-              Get started
+              Get Started
             </Button>
           </div>
         </div>

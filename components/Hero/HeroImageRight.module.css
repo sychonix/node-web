@@ -25,7 +25,7 @@
 }
 
 .content {
-    padding-top: calc(var(--mantine-spacing-xl) * 2);
+    padding-top: calc(var(--mantine-spacing-xl) * 4);
     padding-bottom: calc(var(--mantine-spacing-xl) * 2);
     margin-right: calc(var(--mantine-spacing-xl) * 3);
 
@@ -62,8 +62,8 @@
 }
 
 .control {
-    padding-left: rem(50px);
-    padding-right: rem(50px);
+    padding-left: rem(30px);
+    padding-right: rem(30px);
     font-family:
         Greycliff CF,
         var(--mantine-font-family);

@@ -35,63 +35,54 @@ export function ContactUs() {
   return (
     <div className={classes.wrapper}>
       <Container size="lg">
-        <Grid gutter={120}>
-          <Grid.Col span={{ base: 12, md: 7 }}>
-            <form onSubmit={form.onSubmit(() => {})}>
-              <Title
-                order={2}
-                size="h1"
-                style={{ fontFamily: 'Greycliff CF, var(--mantine-font-family)' }}
-                fw={900}
-                ta="center"
-              >
-                Get in touch
-              </Title>
+        <Title order={2} className={classes.title} ta="center" mt="sm">
+          Contact Us
+        </Title>
+        <Text c="dimmed" className={classes.description} ta="center" mt="md">
+          For any questions regarding our services, please fill out this form or contact us directly
+          via the contact listed.
+        </Text>
 
-              <SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl">
-                <TextInput
-                  label="Name"
-                  placeholder="Your name"
-                  name="name"
-                  {...form.getInputProps('name')}
-                />
-                <TextInput
-                  label="Email"
-                  placeholder="Your email"
-                  name="email"
-                  {...form.getInputProps('email')}
-                />
-              </SimpleGrid>
+        <form onSubmit={form.onSubmit(() => {})}>
+          <SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl">
+            <TextInput
+              label="Name"
+              placeholder="Your name"
+              name="name"
+              {...form.getInputProps('name')}
+            />
+            <TextInput
+              label="Email"
+              placeholder="Your email"
+              name="email"
+              {...form.getInputProps('email')}
+            />
+          </SimpleGrid>
 
-              <TextInput
-                label="Subject"
-                placeholder="Subject"
-                mt="md"
-                name="subject"
-                {...form.getInputProps('subject')}
-              />
-              <Textarea
-                mt="md"
-                label="Message"
-                placeholder="Your message"
-                maxRows={10}
-                minRows={5}
-                autosize
-                name="message"
-                {...form.getInputProps('message')}
-              />
+          <TextInput
+            label="Subject"
+            placeholder="Subject"
+            mt="md"
+            name="subject"
+            {...form.getInputProps('subject')}
+          />
+          <Textarea
+            mt="md"
+            label="Message"
+            placeholder="Your message"
+            maxRows={10}
+            minRows={5}
+            autosize
+            name="message"
+            {...form.getInputProps('message')}
+          />
 
-              <Group justify="center" mt="xl">
-                <Button type="submit" size="md">
-                  Send message
-                </Button>
-              </Group>
-            </form>
-          </Grid.Col>
-          <Grid.Col span={{ base: 12, md: 5 }}>
-            <Image src="/contactus.svg" width={500} height={500} alt="Picture of the author" />
-          </Grid.Col>
-        </Grid>
+          <Group justify="center" mt="xl">
+            <Button type="submit" size="md">
+              Send message
+            </Button>
+          </Group>
+        </form>
       </Container>
     </div>
   );
