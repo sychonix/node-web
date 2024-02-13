@@ -32,8 +32,21 @@ export function ContactUs() {
       subject: (value) => value.trim().length === 0,
     },
   });
+
+  const SendFeedback = (values: any) => {
+    const recipientEmail = ' ravendrgnn@gmail.com';
+    const subject = values.subject;
+    const senderName = values.name;
+    const senderEmail = values.email;
+    const mailtoString = `mailto:${recipientEmail}?subject=${encodeURIComponent(
+      subject
+    )}&cc=${encodeURIComponent(`${senderName} <${senderEmail}>`)}`;
+
+    window.location.href = mailtoString;
+  };
+
   return (
-    <div className={classes.wrapper}>
+    <div className={classes.wrapper} id="contact">
       <Container size="lg">
         <Title order={2} className={classes.title} ta="center" mt="sm">
           Contact Us
@@ -43,7 +56,11 @@ export function ContactUs() {
           via the contact listed.
         </Text>
 
-        <form onSubmit={form.onSubmit(() => {})}>
+        <form
+          onSubmit={form.onSubmit((values) => {
+            SendFeedback(values);
+          })}
+        >
           <SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl">
             <TextInput
               label="Name"

@@ -1,7 +1,9 @@
 'use client';
 
-import { Title, Text, Card, SimpleGrid, Container, Space, Badge } from '@mantine/core';
+import { Title, Text, Card, SimpleGrid, Container, Space, Badge, Button } from '@mantine/core';
 import Image from 'next/image';
+import { useDisclosure } from '@mantine/hooks';
+import { ComingSoonModal } from './ComingSoonModal';
 import classes from './index.module.css';
 
 const mockdata = [
@@ -11,6 +13,8 @@ const mockdata = [
     icon: '/networks/tangle.png',
     status: 'Active',
     type: 'Testnet',
+    monit:
+      'https://telemetry.polkadot.io/#list/0x3d22af97d919611e03bbcbda96f65988758865423e89b2d99547a6bb61452db3',
   },
   {
     title: 'Juneo',
@@ -18,6 +22,7 @@ const mockdata = [
     icon: '/networks/juneo.jpg',
     status: 'Active',
     type: 'Testnet',
+    monit: 'https://mcnscan.io/chain/gr7AypMQYLdjGK9yLWQhDiSLACy2mChwqh6nxnygQmqGs241m',
   },
   {
     title: 'Arkeo',
@@ -25,6 +30,8 @@ const mockdata = [
     icon: '/networks/arkeo.jpg',
     status: 'Archived',
     type: 'Testnet',
+    monit:
+      'https://testnet.arkeo.explorers.guru/validator/tarkeovaloper1fpsqsd70dfwpj0r5z3mwrur0uc7rh2w5fe262l',
   },
   {
     title: 'Over Protocol',
@@ -32,10 +39,12 @@ const mockdata = [
     icon: '/networks/over-protocol.png',
     status: 'Archived',
     type: 'Testnet',
+    monit: 'https://view.over.network/address/0x42351e363e1ea5385befa7b9628c8b8f0b124e88',
   },
 ];
 
 export function Networks() {
+  const [opened, { open, close }] = useDisclosure(false);
   const features = mockdata.map((feature, index) => (
     <Card key={index} shadow="md" radius="md" className={classes.card} padding="md">
       <div style={{ display: 'flex' }}>
@@ -65,15 +74,19 @@ export function Networks() {
       {/* <Text fz="sm" mt="sm">
         {feature.description}
       </Text> */}
-      {/* <div style={{ display: 'flex' }}>
-        <Button variant="filled" radius="md" mt="md">
-          Monit
-        </Button>
-        <Space w="sm" />
-        <Button variant="outline" radius="md" mt="md">
+      <div style={{ display: 'flex' }}>
+        <Button variant="filled" radius="md" mt="md" onClick={open}>
           Stake
         </Button>
-      </div> */}
+        <Space w="sm" />
+        {feature.monit && (
+          <a href={feature.monit} target="_blank" rel="noreferrer">
+            <Button variant="outline" radius="md" mt="md">
+              Monit
+            </Button>
+          </a>
+        )}
+      </div>
     </Card>
   ));
 
@@ -92,6 +105,7 @@ export function Networks() {
             {features}
           </SimpleGrid>
         </Container>
+        <ComingSoonModal opened={opened} onClose={close} />
       </div>
     </>
   );

@@ -1,7 +1,12 @@
 'use client';
 
 import { Anchor, Group, ActionIcon, rem, Container } from '@mantine/core';
-import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
+import {
+  IconBrandTelegram,
+  IconBrandX,
+  IconBrandFacebook,
+  IconBrandDiscord,
+} from '@tabler/icons-react';
 import Image from 'next/image';
 import classes from './index.module.css';
 
@@ -10,6 +15,25 @@ const links = [
   { link: '#', label: 'Networks' },
   { link: '#', label: 'Blog' },
   { link: '#', label: 'Community' },
+];
+
+const socialMedia = [
+  {
+    icon: <IconBrandX style={{ width: rem(18), height: rem(18) }} stroke={1.5} />,
+    link: 'https://twitter.com/klvndrgn',
+  },
+  {
+    icon: <IconBrandTelegram style={{ width: rem(18), height: rem(18) }} stroke={1.5} />,
+    link: 'https://t.me/ravensyndrome',
+  },
+  {
+    icon: <IconBrandDiscord style={{ width: rem(18), height: rem(18) }} stroke={1.5} />,
+    link: 'https://discord.com/users/911861713442340945',
+  },
+  {
+    icon: <IconBrandFacebook style={{ width: rem(18), height: rem(18) }} stroke={1.5} />,
+    link: 'https://web.facebook.com/azazel4041',
+  },
 ];
 
 export function FooterSection() {
@@ -30,29 +54,30 @@ export function FooterSection() {
     <div className={classes.footer}>
       <Container size="lg">
         <div className={classes.inner}>
-          {/* <div>
-            <Image
-              src="/ravennode-logo.svg"
-              width={80}
-              height={80}
-              alt="Picture of the author"
-              // style={{
-              //   objectFit: 'contain',
-              // }}
-            />
-          </div> */}
           <div>Copyright © 2023 Ravenode. All Rights Reserved.</div>
           <Group className={classes.links}>{items}</Group>
           <Group gap="xs" justify="flex-end" wrap="nowrap">
-            <ActionIcon size="lg" variant="default" radius="xl">
-              <IconBrandTwitter style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+            {socialMedia.map((item, index) => {
+              return (
+                <a href={item.link} target="_blank" rel="noreferrer" key={index}>
+                  <ActionIcon size="lg" variant="default" radius="xl" key={index}>
+                    {item.icon}
+                  </ActionIcon>
+                </a>
+              );
+            })}
+            {/* <ActionIcon size="lg" variant="default" radius="xl">
+              <IconBrandTelegram style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
             </ActionIcon>
             <ActionIcon size="lg" variant="default" radius="xl">
-              <IconBrandYoutube style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+              <IconBrandX style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
             </ActionIcon>
             <ActionIcon size="lg" variant="default" radius="xl">
-              <IconBrandInstagram style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+              <IconBrandDiscord style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
             </ActionIcon>
+            <ActionIcon size="lg" variant="default" radius="xl">
+              <IconBrandFacebook style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
+            </ActionIcon> */}
           </Group>
         </div>
       </Container>

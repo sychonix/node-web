@@ -16,7 +16,19 @@ export function FAQ() {
         </Text>
 
         <Accordion variant="separated" mt={50}>
-          <Accordion.Item className={classes.item} value="reset-password">
+          <Accordion.Item className={classes.item} value="validator">
+            <Accordion.Control>What is a node/validator?</Accordion.Control>
+            <Accordion.Panel>
+              A node/validator is a server tasked with validating and operating within the
+              blockchain network. Each node engages in communication with every other node,
+              exchanging information about transactions. Depending on the blockchain's type and
+              purpose, nodes may collaborate to gather information and compile it into a block. This
+              block is subsequently proposed to other nodes for approval, a process known as
+              validation.
+            </Accordion.Panel>
+          </Accordion.Item>
+
+          <Accordion.Item className={classes.item} value="reliability">
             <Accordion.Control>What about reliability ?</Accordion.Control>
             <Accordion.Panel>
               We run nodes on dedicated servers in Europe, USA and Singapore. Our team uses

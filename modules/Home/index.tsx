@@ -1,6 +1,5 @@
 import { HeaderSection } from '@/components/Header';
 import { HeroImageRight } from '@/components/Hero/HeroImageRight';
-// import { FeatureSection } from '@/components/Features';
 import { FooterSection } from '@/components/Footer';
 import { AboutUs } from './AboutUs';
 import { Networks } from './Networks';
@@ -12,7 +11,6 @@ export function Home() {
     <>
       <HeaderSection />
       <HeroImageRight />
-      {/* <FeatureSection /> */}
       <AboutUs />
       <Networks />
       <FAQ />
