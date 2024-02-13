@@ -56,7 +56,7 @@ export function Networks() {
               {feature.type}
             </Badge>
             <Space w="xs" />
-            <Badge size="sm" variant="dot" color={feature.status === 'Active' ? 'red' : 'green'}>
+            <Badge size="sm" variant="dot" color={feature.status === 'Active' ? 'green' : 'red'}>
               {feature.status}
             </Badge>
           </div>
