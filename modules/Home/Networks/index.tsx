@@ -8,6 +8,14 @@ import classes from './index.module.css';
 
 const mockdata = [
   {
+    title: 'Koii',
+    // code: 'TIA',
+    icon: '/networks/koii.png',
+    status: 'Active',
+    type: 'Testnet',
+    monit: 'https://explorer.koii.live/address/BpHX5a7WEQYMek3MjaEtQENXmANkU894rFy6N3L1MUU1',
+  },
+  {
     title: 'Tangle',
     // code: 'TIA',
     icon: '/networks/tangle.png',
