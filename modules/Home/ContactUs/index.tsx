@@ -34,7 +34,7 @@ export function ContactUs() {
   });
 
   const SendFeedback = (values: any) => {
-    const recipientEmail = ' ravendrgnn@gmail.com';
+    const recipientEmail = ' sychonixx@gmail.com';
     const subject = values.subject;
     const senderName = values.name;
     const senderEmail = values.email;
