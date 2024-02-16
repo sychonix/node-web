@@ -20,14 +20,14 @@ export function HeroImageRight() {
                 // variant="gradient"
                 // gradient={{ from: 'pink', to: 'yellow' }}
               >
-                Raven
+                sychonix
               </Text>{' '}
               Node, <br /> Connecting Blocks
             </Title>
 
             <Text className={classes.description} mt={30}>
-              Independent node validator, ready to contribute to decentralized networks and foster
-              innovation in the realm of blockchain technology.
+              An enthusiastic node runner dedicated to operating nodes for blockchain projects, 
+            and eager to contribute to the advancement of blockchain technology through reliable and efficient node operations
             </Text>
             {/* <FeatureSection /> */}
             <Button
