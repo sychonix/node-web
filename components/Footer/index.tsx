@@ -20,19 +20,19 @@ const links = [
 const socialMedia = [
   {
     icon: <IconBrandX style={{ width: rem(18), height: rem(18) }} stroke={1.5} />,
-    link: 'https://twitter.com/klvndrgn',
+    link: 'https://twitter.com/sychonixx',
   },
   {
     icon: <IconBrandTelegram style={{ width: rem(18), height: rem(18) }} stroke={1.5} />,
-    link: 'https://t.me/ravensyndrome',
+    link: 'https://t.me/sychonix',
   },
   {
     icon: <IconBrandDiscord style={{ width: rem(18), height: rem(18) }} stroke={1.5} />,
-    link: 'https://discord.com/users/911861713442340945',
+    link: 'https://discord.com/users/803665234799362088',
   },
   {
     icon: <IconBrandFacebook style={{ width: rem(18), height: rem(18) }} stroke={1.5} />,
-    link: 'https://web.facebook.com/azazel4041',
+    link: 'https://web.facebook.com/memew',
   },
 ];
 
