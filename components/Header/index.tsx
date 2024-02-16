@@ -64,7 +64,7 @@ export function HeaderSection() {
               width: '100%',
             }}
           >
-            <Image src="/ravennode-logo.svg" width={150} height={150} alt="Picture of the author" />
+            <Image src="/sychonix.svg" width={150} height={150} alt="Picture of the author" />
 
             <Group h="100%" gap={0} visibleFrom="sm" style={{ color: 'white' }}>
               {navigation.map((item, index) => {
