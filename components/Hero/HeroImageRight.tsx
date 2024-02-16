@@ -20,9 +20,9 @@ export function HeroImageRight() {
                 // variant="gradient"
                 // gradient={{ from: 'pink', to: 'yellow' }}
               >
-                sychonix
+                Hi!
               </Text>{' '}
-              Node, <br /> Connecting Blocks
+               I'm <br /> Sychonix
             </Title>
 
             <Text className={classes.description} mt={30}>
