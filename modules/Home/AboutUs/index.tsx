@@ -16,7 +16,7 @@ const features = [
     icon: IconGauge,
     title: 'Always Online',
     description:
-      'Our nodes are redundant and are globally distributed between multiple data centers, providing uninterrupted service.',
+      'Our network nodes are duplicated and strategically dispersed across various data centers worldwide, ensuring continuous and uninterrupted service.',
   },
   {
     icon: IconBusinessplan,
