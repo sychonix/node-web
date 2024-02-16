@@ -9,7 +9,7 @@ export function HeroSection() {
       <div className={classes.inner}>
         <div className={classes.content}>
           <Title className={classes.title}>
-            <span className={classes.highlight}>Raven</span> Node <br /> Connecting Blocks
+            <span className={classes.highlight}>Sychonix</span> Node <br /> Connecting Blocks
           </Title>
           <Text c="dimmed" mt="md">
             Independent node validator, ready to contribute to decentralized networks and foster
