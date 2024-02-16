@@ -21,13 +21,13 @@ const features = [
   {
     icon: IconBusinessplan,
     title: 'Fee',
-    description: 'Minimal fees and remarkable uptime with zero slashing penalties.',
+    description: 'Sychonix Low Comission and Impressive Uptime with 0 Slashing!.',
   },
   {
     icon: IconHeartRateMonitor,
     title: 'Monitoring',
     description:
-      'Proactive Monitoring to constant monitoring to detect and address potential issues before they impact the network.',
+      'Sychonix is Highly secured with 24/7 Monitoring.',
   },
   {
     icon: IconServer2,
